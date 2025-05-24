@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong 2 Player</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #222;
+      color: #eee;
+    }
+    #gameCanvas {
+      background-color: #000;
+      display: block;
+      margin: auto;
+      border: 2px solid #fff;
+    }
+    .modal-content {
+      background-color: #333;
+      color: #fff;
+    }
+    button {
+      outline: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container text-center my-3">
+    <h1>Pong 2 Player</h1>
+    <div class="mb-3">
+      <button class="btn btn-info" id="helpButton" data-toggle="modal" data-target="#helpModal">Help</button>
+      <button class="btn btn-warning" id="recordButton">Record</button>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas" width="600" height="400"></canvas>
+
+  <!-- Help Modal -->
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="helpModalLabel">Regolamento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Il gioco è una versione classica del Pong a 2 giocatori.<br>
+            • Usa la parte sinistra dello schermo per muovere la racchetta sinistra.<br>
+            • Usa la parte destra per la racchetta destra.<br>
+            • L’obiettivo è impedire che la palla superi la tua racchetta. Se accade, l’avversario segna un punto.<br>
+            • La partita termina quando un giocatore raggiunge 5 punti.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Record Modal -->
+  <div class="modal fade" id="recordModal" tabindex="-1" role="dialog" aria-labelledby="recordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recordModalLabel">Record Vincitori</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="recordContent">
+          <!-- I record verranno caricati dinamicamente -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap e jQuery (necessario per i modali) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Il nostro script di gioco -->
+  <script src="main.js"></script>
+</body>
+</html>
